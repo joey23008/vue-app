@@ -1,0 +1,16 @@
+{
+    "name": "Existing Docker Compose (Extend)",
+    "dockerComposeFile": [
+      "../../docker-compose.yml"
+    ],
+    "service": "frontend",
+    "workspaceFolder": "/var/www/html",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+        ],
+        "settings": {
+        }
+      }
+    }
+  }

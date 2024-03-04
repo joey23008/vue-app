@@ -20,7 +20,7 @@ class RoomController extends Controller
      */
     public function index()
     {
-        return RoomResource::collection(Room::all());  
+        return Room::all();
     }
 
     /**

@@ -2,7 +2,7 @@
 import { ref, onMounted } from "vue";
 import type { Ref } from "vue";
 import { client } from '@/composables/useApi';
-import { Room } from 'ApiDataTypes';
+import type { Room } from 'ApiDataTypes';
 
 const rooms: Ref<Room[]> = ref([]);
 

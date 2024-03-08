@@ -14,7 +14,10 @@ export const useUserStore = defineStore('user', () => {
         const { data } = await client.post('/login', { email, password });
         if (data) {
             localStorage.setItem('userSession', data)
-            setUserSession(data);
+            setUserSession({
+                user: data.user,
+                authorisation: data.authorisation
+            });
         }
     }
 
@@ -33,7 +36,10 @@ export const useUserStore = defineStore('user', () => {
         const { data } = await client.post('/register', { name, email, password });
         console.log('data', data)
         if (data) {
-            setUserSession(data);
+            setUserSession({
+                user: data.user,
+                authorisation: data.authorisation
+            });
             router.push('/')
         }
     }

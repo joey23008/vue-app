@@ -15,10 +15,11 @@ export const client = axios.create({
 client.interceptors.request.use(
     (request: InternalAxiosRequestConfig) => {
         const { session } = useUserStore();
-        if (session?.authorisation.token) {
+        console.log('session', session)
+        if (session?.authorisation?.token) {
             request.headers.Authorization = 'Bearer ' + session?.authorisation.token;
         }
-        
+
         return request;
     }
 );

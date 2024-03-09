@@ -8,9 +8,10 @@ const loginGuard = async (to: any, from: any, next: Function) => {
     console.log('loginGuard', session);
     if (session) {
         next();
-    } else if (localStorage.getItem('userSession')) {
-        console.log('stoarage session', localStorage.getItem('userSession'))
-        setUserSession(localStorage.getItem('userSession'));
+    } else if (sessionStorage.getItem('userSession')) {
+        const userSession = JSON.parse(sessionStorage.getItem('userSession') ?? '')
+        console.log('stoarage session', userSession)
+        setUserSession(userSession);
         next();
     } else {
         next(loginRoute);

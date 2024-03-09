@@ -13,17 +13,18 @@ export const useUserStore = defineStore('user', () => {
     const login = async (email: string, password: string): Promise<void> => {
         const { data } = await client.post('/login', { email, password });
         if (data) {
-            localStorage.setItem('userSession', data)
-            setUserSession({
+            const user = {
                 user: data.user,
                 authorisation: data.authorisation
-            });
+            }
+            sessionStorage.setItem('userSession', JSON.stringify(user))
+            setUserSession(user);
         }
     }
 
     const logout = async (): Promise<void> => {
         await client.post('/logout');
-        localStorage.removeItem('userSession');
+        sessionStorage.removeItem('userSession');
         setUserSession(null);
         router.push('/login');
     }

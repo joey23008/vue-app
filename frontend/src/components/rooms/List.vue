@@ -14,4 +14,14 @@ console.log('rooms', rooms.value);
 </script>
 <template>
     <h1>Rooms</h1>
+    <v-list lines="one">
+        <v-list-item
+            v-for="room in rooms"
+            :key="room.id"
+        >
+            <router-link :to="`/rooms/${room.id}`">
+                {{room.room_name}}
+            </router-link>
+        </v-list-item>
+    </v-list>
 </template>

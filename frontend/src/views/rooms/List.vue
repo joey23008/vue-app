@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Rooms from "@/components/Rooms.vue";
+import List from "@/components/rooms/List.vue";
 </script>
 
 <template>
-  <rooms/>
+  <list/>
 </template>

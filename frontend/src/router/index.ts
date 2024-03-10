@@ -22,9 +22,15 @@ const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
-            path: '/',
-            name: 'home',
-            component: () => import('../views/Rooms.vue'),
+            path: '/rooms',
+            name: 'rooms',
+            component: () => import('../views/rooms/List.vue'),
+            beforeEnter: loginGuard
+        },
+        {
+            path: '/rooms/:id',
+            name: 'room.show',
+            component: () => import('../views/rooms/Show.vue'),
             beforeEnter: loginGuard
         },
         {

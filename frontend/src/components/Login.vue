@@ -20,7 +20,7 @@
     ];
     async function submit (event) {
         await login(email.value, password.value);
-        router.push('/')
+        router.push('/rooms')
     }
 </script>
 <template>

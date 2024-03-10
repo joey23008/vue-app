@@ -14,7 +14,7 @@ class RoomSeeder extends Seeder
      */
     public function run(): void
     {
-        Room::trancate();
+        DB::table('rooms')->truncate();
         
         $path = base_path() . '/tmp/csv/';
         $fileName = 'rooms.csv';
